@@ -1,10 +1,14 @@
-
+import { useState } from 'react';
 import './App.css'
-import Test from "./test.jsx";
 function App() {
-  
+  const[count, setCount] = useState(0);
+
+  function onClickHandler(){
+    setCount(count + 1);
+  }
+
   return(
-    <Test/>
+    <button onClick={onClickHandler}>Counter {count}</button>
   );
 }
 
