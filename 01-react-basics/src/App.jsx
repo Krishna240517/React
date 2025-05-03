@@ -1,8 +1,11 @@
 
 import './App.css'
-
+import Test from "./test.jsx";
 function App() {
-  return <h1>hello world</h1>
+  
+  return(
+    <Test/>
+  );
 }
 
 export default App
