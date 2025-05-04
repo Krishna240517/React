@@ -8,8 +8,12 @@ function App() {
   }
 
   return(
-    <button onClick={onClickHandler}>Counter {count}</button>
+    <Button onClick={onClickHandler} count={count}/>
   );
 }
-
+function Button(props){
+  return(
+    <button onClick={props.onClick}>Counter {props.count}</button>
+  )
+}
 export default App
