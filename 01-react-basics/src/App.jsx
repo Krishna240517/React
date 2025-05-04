@@ -1,32 +1,27 @@
 import { useState } from 'react';
 import './App.css'
 function App() {
-  const[countUp,setCountUp] = useState(0);
-  const[countDown, setCountDown] = useState(10);
-
-  function onClickUpHandler(){
-    setCountUp(countUp + 1);
+  const[count, setCount] = useState(10);
+  function onClickUp(){
+    setCount(count + 1);
   }
-  function onClickDownHandler(){
-    setCountDown(countDown - 1);
+  function onClickDown(){
+    setCount(count - 1);
   }
-
   return(
-    <div>
-      <ButtonUp onClick={onClickUpHandler} count={countUp}></ButtonUp>
-      <ButtonDown onClick={onClickDownHandler} count={countDown}></ButtonDown>
-    </div>
+    <>
+      <h1>KRISHNA REACTS</h1>
+      <Content count={count}/>
+      <button onClick={onClickUp}>Increase Counter</button>
+      <br />
+      <button onClick={onClickDown}>Decrease Counter</button>
+    </>
   )
 }
 
-function ButtonUp(props){
+function Content(props){
   return(
-    <button onClick={props.onClick}>Counter {props.count}</button>
+    <h2>Counter: {props.count}</h2>
   )
-}
-function ButtonDown(props){
-  return(
-    <button onClick={props.onClick}>Counter {props.count}</button>
-  ) 
 }
 export default App
